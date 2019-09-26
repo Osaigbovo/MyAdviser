@@ -95,8 +95,8 @@ public class MainActivityTest {
         // Assert
         assertThat(workInfo.getState(), is(WorkInfo.State.ENQUEUED));
 
-        onView(withId(R.id.progress_bar))
-                .check(matches(not(isDisplayed())));
+        onView(withId(R.id.text_advice))
+                .check(matches(isDisplayed()));
     }
 
 
