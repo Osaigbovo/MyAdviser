@@ -25,8 +25,7 @@ public class AdviceWorkerTest extends Worker {
             return Result.failure();
         }
 
-        if (input.getString("advice") == null ||
-                input.getString("advice").isEmpty()) {
+        if (input.getString("advice") == null || input.getString("advice").isEmpty()) {
             return Result.failure();
         } else {
             return Result.success(input);

@@ -1,11 +1,8 @@
 package com.osaigbovo.myadviser.ui;
 
 import android.content.Context;
-import android.util.Log;
 
-import androidx.lifecycle.LifecycleOwner;
 import androidx.lifecycle.LiveData;
-import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 import androidx.work.BackoffPolicy;
 import androidx.work.Constraints;
@@ -16,7 +13,6 @@ import androidx.work.WorkManager;
 import androidx.work.WorkRequest;
 
 import com.osaigbovo.myadviser.worker.AdviceWorker;
-import com.osaigbovo.myadviser.worker.RefreshScheduler;
 
 import java.util.concurrent.TimeUnit;
 
@@ -58,11 +54,6 @@ public class MainViewModel extends ViewModel {
 
         //listen to status and data from worker
         return WorkManager.getInstance(context).getWorkInfoByIdLiveData(oneTimeWorkRequest.getId());
-    }
-
-
-    public void setupPeriodicRefreshWork(){
-        RefreshScheduler.refreshPeriodicWork(context);
     }
 
     @Override
